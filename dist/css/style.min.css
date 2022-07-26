@@ -79,7 +79,7 @@ a, body {
   font-weight: 500;
 }
 
-.footer-top__form-btn {
+.top-slider__link, .footer-top__form-btn {
   font-family: Roboto;
   font-weight: 400;
 }
@@ -89,9 +89,17 @@ a, body {
   font-weight: 500;
 }
 
-.menu__list-link--active {
+.top-slider__title, .menu__list-link--active {
   font-family: Roboto;
   font-weight: 700;
+}
+
+.top-slider__link, .footer-top__form-btn {
+  padding: 12px 26px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #fe3e57;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 }
 
 @font-face {
@@ -285,11 +293,7 @@ a {
   font-size: 16px;
 }
 .footer-top__form-btn {
-  text-transform: uppercase;
-  color: #fff;
   width: 140px;
-  background-color: #fe3e57;
-  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 }
 
 .footer-bottom {
@@ -302,4 +306,75 @@ a {
 .footer-bottom__accept-img {
   margin-left: 25px;
   vertical-align: middle;
+}
+
+.top-slider {
+  background-color: #f6f6f6;
+  background-image: url("../img/top-slider-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 70px;
+  padding-bottom: 44px;
+}
+.top-slider__container {
+  max-width: 1520px;
+}
+.top-slider__item {
+  display: flex !important;
+  justify-content: space-between;
+}
+.top-slider__content {
+  padding-left: 160px;
+  padding-top: 125px;
+}
+.top-slider__title {
+  color: #29282d;
+  font-size: 58px;
+  line-height: 68px;
+  width: 570px;
+  margin-bottom: 30px;
+}
+.top-slider__subtitle {
+  margin-bottom: 55px;
+  width: 470px;
+}
+.top-slider__link {
+  width: 160px;
+  letter-spacing: 2px;
+  padding: 14px 35px;
+}
+.top-slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+}
+.top-slider .slick-dots li {
+  padding: 0 5px;
+  line-height: 0;
+}
+.top-slider .slick-dots li button {
+  font-size: 0;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: relative;
+}
+.top-slider .slick-dots li button::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 50%;
+  background-color: #8d8d8d;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.top-slider .slick-dots li.slick-active button {
+  border-color: #fe3e57;
+}
+.top-slider .slick-dots li.slick-active button::before {
+  background-color: #fe3e57;
 }
