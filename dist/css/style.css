@@ -79,17 +79,17 @@ a, body {
   font-weight: 500;
 }
 
-.top-slider__link, .footer-top__form-btn {
+.categories__item-link, .info__item-title, .top-slider__link, .footer-top__form-btn {
   font-family: Roboto;
   font-weight: 400;
 }
 
-.footer-top__title, .menu__list-link {
+.categories__item-title, .footer-top__title, .menu__list-link {
   font-family: Roboto;
   font-weight: 500;
 }
 
-.top-slider__title, .menu__list-link--active {
+.top-slider__title, .menu__list-link--active, .title {
   font-family: Roboto;
   font-weight: 700;
 }
@@ -165,6 +165,23 @@ a {
   font-size: 16px;
   line-height: 26px;
   color: #8d8d8d;
+}
+
+.title {
+  text-align: center;
+  font-size: 48px;
+  line-height: 26px;
+  color: #29282d;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.text {
+  width: 570px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 55px;
 }
 
 .header {
@@ -310,7 +327,7 @@ a {
 
 .top-slider {
   background-color: #f6f6f6;
-  background-image: url("../img/top-slider-bg.png");
+  background-image: url("../img/decor/top-slider-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 70px;
@@ -342,6 +359,7 @@ a {
   width: 160px;
   letter-spacing: 2px;
   padding: 14px 35px;
+  cursor: pointer;
 }
 .top-slider .slick-dots {
   display: flex;
@@ -377,4 +395,125 @@ a {
 }
 .top-slider .slick-dots li.slick-active button::before {
   background-color: #fe3e57;
+}
+
+.categories-info {
+  padding: 120px 0;
+  background-image: url("../img/decor/categories-left-bg.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.categories-info__inner {
+  background-image: url("../img/decor/categories-right-bg.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+  position: relative;
+}
+.info::before, .info::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+}
+.info::before {
+  top: -40px;
+  left: -45px;
+  width: 120px;
+  height: 121px;
+  background-image: url("../img/decor/info-decor-1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.info::after {
+  bottom: -24px;
+  right: -24px;
+  background-image: url("../img/decor/info-decor-2.svg");
+  width: 65px;
+  height: 52px;
+}
+.info__item {
+  box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+  background-color: #fff;
+  padding: 60px 30px;
+  width: 370px;
+  z-index: 2;
+}
+.info__item svg {
+  margin-bottom: 35px;
+}
+.info__item-title {
+  font-size: 22px;
+  color: #29282d;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+.categories__inner {
+  height: 635px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+.categories__item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 35px 40px;
+}
+.categories__item:nth-child(1) {
+  grid-row: span 2;
+}
+.categories__item:nth-child(1) .categories__item-subtitle {
+  color: #5800e4;
+}
+.categories__item:nth-child(1) .categories__item-link:hover {
+  color: #5800e4;
+  border-bottom: 1px solid #5800e4;
+}
+.categories__item:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  grid-column: span 2;
+}
+.categories__item:nth-child(2) .categories__item-subtitle {
+  color: #fe3e57;
+}
+.categories__item:nth-child(2) .categories__item-link:hover {
+  color: #fe3e57;
+  border-bottom: 1px solid #fe3e57;
+}
+.categories__item:nth-child(3) .categories__item-subtitle {
+  color: #ffb534;
+}
+.categories__item:nth-child(3) .categories__item-link:hover {
+  color: #ffb534;
+  border-bottom: 1px solid #ffb534;
+}
+.categories__item:nth-child(4) .categories__item-subtitle {
+  color: #34c3ff;
+}
+.categories__item:nth-child(4) .categories__item-link:hover {
+  color: #34c3ff;
+  border-bottom: 1px solid #34c3ff;
+}
+.categories__item-subtitle {
+  margin-bottom: 5px;
+}
+.categories__item-title {
+  font-size: 22px;
+  color: #29282d;
+  margin-bottom: 5px;
+}
+.categories__item-link {
+  color: #29282d;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  transition: all 0.3s;
 }
