@@ -79,12 +79,12 @@ a, body {
   font-weight: 500;
 }
 
-.categories__item-link, .info__item-title, .video-fashion__link, .top-slider__link, .footer-top__form-btn {
+.product__link, .categories__item-link, .info__item-title, .product-item--sale .product-item__img-box::before, .video-fashion__link, .top-slider__link, .footer-top__form-btn {
   font-family: Roboto;
   font-weight: 400;
 }
 
-.categories__item-title, .footer-top__title, .menu__list-link {
+.product-item__price, .categories__item-title, .footer-top__title, .menu__list-link {
   font-family: Roboto;
   font-weight: 500;
 }
@@ -94,7 +94,7 @@ a, body {
   font-weight: 700;
 }
 
-.video-fashion__link, .top-slider__link, .footer-top__form-btn {
+.product-item--sale .product-item__img-box::before, .video-fashion__link, .top-slider__link, .footer-top__form-btn {
   padding: 12px 26px;
   text-transform: uppercase;
   color: #fff;
@@ -1083,6 +1083,49 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   display: block;
 }
 
+.jq-ry-container {
+  position: relative;
+  padding: 0 5px;
+  line-height: 0;
+  display: block;
+  cursor: pointer;
+  box-sizing: content-box;
+  direction: ltr;
+}
+
+.jq-ry-container[readonly=readonly] {
+  cursor: default;
+}
+
+.jq-ry-container > .jq-ry-group-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group {
+  position: relative;
+  line-height: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group > svg {
+  display: inline-block;
+}
+
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-normal-group {
+  width: 100%;
+}
+
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-rated-group {
+  width: 0;
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
 .header {
   padding: 40px 0;
 }
@@ -1351,6 +1394,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   line-height: 26px;
   margin-bottom: 10px;
 }
+
 .categories__inner {
   height: 635px;
   display: grid;
@@ -1460,4 +1504,115 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .video-fashion__link {
   letter-spacing: 2px;
   font-size: 16px;
+}
+
+.product {
+  padding: 115px 0;
+  text-align: center;
+}
+.product__link {
+  color: #29282d;
+  line-height: 1;
+  letter-spacing: 2px;
+  border: 1px solid #fe3e57;
+  padding: 14px 30px;
+}
+.product__items {
+  height: 1030px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 45px 30px;
+  margin-bottom: 60px;
+}
+
+.product-item {
+  max-width: 370px;
+  text-align: center;
+}
+.product-item__img-box {
+  height: 370px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.product-item__images {
+  object-fit: cover;
+}
+.product-item__link-box {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 210px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+  transform: translateY(300%);
+  transition: all 0.3s;
+}
+.product-item__link {
+  display: inherit;
+}
+.product-item__link path {
+  transition: all 0.3s;
+}
+.product-item__link:hover path {
+  fill: #fe3e57;
+}
+.product-item__link--line::before, .product-item__link--line::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 30px;
+  background-color: #ececec;
+}
+.product-item__link--line::before {
+  top: 10px;
+  left: 70px;
+}
+.product-item__link--line::after {
+  top: 10px;
+  right: 70px;
+}
+.product-item__title {
+  color: #29282d;
+  font-size: 22px;
+  padding: 20px 0;
+}
+.product-item__price {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.product-item__new-price {
+  color: #29282d;
+}
+.product-item__old-price {
+  text-decoration: line-through;
+}
+.product-item:hover .product-item__link-box {
+  transform: translateY(0);
+}
+.product-item--sale .product-item__img-box::before {
+  content: "SALE";
+  position: absolute;
+  height: 30px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  padding: 13px;
+  top: 25px;
+  left: 25px;
+}
+
+.star {
+  margin: 0 auto;
+  cursor: auto;
 }
