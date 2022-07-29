@@ -1837,3 +1837,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .modal__error {
   color: #fe3e57;
 }
+.modal__text {
+  margin-bottom: 30px;
+}
