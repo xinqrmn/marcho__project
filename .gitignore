@@ -1,6 +1,6 @@
 src/
 node_modules/
-gulp/
+**/gulp
 package.json
 package-lock.json
 gulpfile.js
